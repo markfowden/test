@@ -1,4 +1,5 @@
 name: Publish Test Results
+on: push
 permissions:
   checks: write
   pull-requests: write
