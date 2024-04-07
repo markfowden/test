@@ -8,6 +8,15 @@ jobs:
     name: JunitJob
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10
+      - name: Install Pytest
+        run: python3 -m pip install pytest
+      - name: Run Tests
+        run: python3 -m pytest . --junitxml=./xml
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action@v2.16.1
         if: always()
