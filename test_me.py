@@ -1,6 +1,6 @@
 
 
 def test_me(record_property):
-    pass
+    assert True
     #record_property('example', 'example')
 
