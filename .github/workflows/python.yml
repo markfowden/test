@@ -16,24 +16,24 @@ jobs:
       - name: Install Pytest
         run: python3 -m pip install pytest
       - name: Run Tests
-        run: python3 -m pytest . --junitxml=./xml
+        run: python3 -m pytest . --junitxml=./results.xml
       - name: junit publish test results
         uses: EnricoMi/publish-unit-test-result-action@v2.16.1
         if: always()
         with:
           files: |
-            ./xml                    
+            results.xml
       - name: junit report
         uses: mikepenz/action-junit-report@v4
         if: always()
         with:
-          report_paths: './xml'
+          report_paths: 'results.xml'
       - name: junit test reporter
         uses: dorny/test-reporter@v1.9.0
         if: always()
         with:
           name: test reporter checks
-          path: ./xml
+          path: results.xml
           reporter: java-junit
 
 
