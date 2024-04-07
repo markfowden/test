@@ -1,9 +1,9 @@
-- name: Publish Test Results
-  permissions:
-    checks: write
-    pull-requests: write
-  uses: EnricoMi/publish-unit-test-result-action@v2.16.1
-  if: always()
-  with:
-    files: |
-      ./xml
+name: Publish Test Results
+permissions:
+  checks: write
+  pull-requests: write
+uses: EnricoMi/publish-unit-test-result-action@v2.16.1
+if: always()
+with:
+  files: |
+    ./xml
