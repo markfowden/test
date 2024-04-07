@@ -22,12 +22,19 @@ jobs:
         if: always()
         with:
           files: |
-            ./xml
-                    
+            ./xml                    
       - name: junit report
         uses: mikepenz/action-junit-report@v4
         if: always()
         with:
           report_paths: './xml'
+      - name: junit test reporter
+        uses: dorny/test-reporter@v1.9.0
+        if: always()
+        with:
+          name: test reporter checks
+          path: ./xml
+          reporter: java-junit
+
 
 
