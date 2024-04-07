@@ -34,7 +34,7 @@ jobs:
         with:
           name: test reporter checks
           path: ./xml
-          reporter: java-junit
+          reporter: jest-junit
 
 
 
