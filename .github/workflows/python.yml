@@ -3,8 +3,10 @@ on: push
 permissions:
   checks: write
   pull-requests: write
-uses: EnricoMi/publish-unit-test-result-action@v2.16.1
-if: always()
-with:
-  files: |
-    ./xml
+jobs:
+  junit-job:
+    uses: EnricoMi/publish-unit-test-result-action@v2.16.1
+    if: always()
+    with:
+      files: |
+        ./xml
