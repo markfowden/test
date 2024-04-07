@@ -2,5 +2,5 @@
 
 def test_me(record_property):
     assert True
-    #record_property('example', 'example')
+    record_property('example', 'example')
 
